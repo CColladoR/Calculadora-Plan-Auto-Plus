@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="es"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Calculadora Plan Auto+ 2026&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS para estilos rápidos y modernos --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Iconos Lucide --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://unpkg.com/lucide@latest"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts: Inter --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Animaciones suaves para el resultado */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.result-enter {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: slideIn 0.4s ease-out forwards;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes slideIn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(10px); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>to { opacity: 1; transform: translateY(0); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Ajuste para inputs de tipo rango y select en móviles */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>select, input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px; /* Evita zoom en iOS */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="p-4 flex items-center justify-center min-h-screen"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Contenedor Principal de la Herramienta --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="w-full max-w-lg bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Cabecera --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- CAMBIO: bg-indigo-600 a bg-[#49795e] y text-indigo-100 a text-[#f1f9f5] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="bg-[#49795e] p-6 text-white"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex items-center gap-3 mb-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;i data-lucide="calculator" class="w-6 h-6"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-xl font-bold"&gt;Simulador Plan Auto+ 2026&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-[#f1f9f5] text-sm"&gt;Calcula la cuantía estimada de tu ayuda según los nuevos requisitos de sostenibilidad y fabricación europea.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Formulario --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="p-6 space-y-6"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- 1. Tipo de Motor --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- CAMBIO: text-indigo-500 a text-[#49795e] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="zap" class="w-4 h-4 text-[#49795e]"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Tipo de Propulsión</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="cursor-pointer relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="radio" name="engineType" value="bev" class="peer sr-only" checked onchange="calculateAid()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- CAMBIO: peer-checked:border-indigo-500 a-[#49795e] y peer-checked:bg-indigo-50 a bg-[#f1f9f5] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-lg border border-slate-200 bg-slate-50 peer-checked:border-[#49795e] peer-checked:bg-[#f1f9f5] transition-all text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="block font-medium text-slate-800"&gt;Eléctrico Puro (BEV)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs text-slate-500"&gt;50% de la base&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="cursor-pointer relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="radio" name="engineType" value="phev" class="peer sr-only" onchange="calculateAid()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- CAMBIO: peer-checked:border-indigo-500 a-[#49795e] y peer-checked:bg-indigo-50 a bg-[#f1f9f5] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="p-3 rounded-lg border border-slate-200 bg-slate-50 peer-checked:border-[#49795e] peer-checked:bg-[#f1f9f5] transition-all text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="block font-medium text-slate-800"&gt;Híbrido Enchufable&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="text-xs text-slate-500"&gt;25% de la base&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- 2. Precio del Vehículo --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- CAMBIO: text-indigo-500 a text-[#49795e] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;label for="price" class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;i data-lucide="tag" class="w-4 h-4 text-[#49795e]"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>Precio del Vehículo (Sin IVA)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"&gt;€&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- CAMBIO: focus:ring-indigo-500 a ring-[#49795e] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;input type="number" id="price" placeholder="Ej: 34000" class="w-full pl-8 pr-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#49795e] focus:border-[#49795e] outline-none transition-all" oninput="calculateAid()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs text-slate-500 mt-1"&gt;Límite máximo para ayudas: 45.000 €&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- 3. Origen y Batería --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs font-bold text-slate-400 uppercase tracking-wide"&gt;Bonus Fabricación UE&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Coche Fabricado en UE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-between"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="text-sm font-medium text-slate-700 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="factory" class="w-4 h-4 text-emerald-600"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>¿Fabricado en la UE?</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="relative inline-flex items-center cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="checkbox" id="madeInEu" class="sr-only peer" onchange="calculateAid()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- CAMBIO: focus ring y bg checked al nuevo verde oscuro --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#49795e] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#49795e]"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Batería Ensamblada en UE --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center justify-between border-t border-slate-200 pt-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="text-sm font-medium text-slate-700 flex items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;i data-lucide="battery-charging" class="w-4 h-4 text-emerald-600"&gt;&lt;/i&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>¿Batería ensamblada en UE?</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;label class="relative inline-flex items-center cursor-pointer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;input type="checkbox" id="batteryEu" class="sr-only peer" onchange="calculateAid()"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- CAMBIO: focus ring y bg checked al nuevo verde oscuro --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#49795e] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#49795e]"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Botón Calcular --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Mantenemos slate-800 para contraste o podemos usar el verde oscuro --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button onclick="calculateAid()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-lg transition-colors shadow-lg flex justify-center items-center gap-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Actualizar Cálculo</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Área de Resultados --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- CAMBIO: bg-indigo-50 a bg-[#f1f9f5] y border-indigo-100 a un borde suave verde --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="resultArea" class="bg-[#f1f9f5] p-6 border-t border-[#49795e]/20 hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Caso: Excluido por precio --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="excludedMessage" class="hidden text-center text-red-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-center mb-2"&gt;&lt;i data-lucide="alert-circle" class="w-8 h-8"&gt;&lt;/i&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="font-bold text-lg"&gt;Vehículo Excluido&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-sm text-red-500 mt-1"&gt;El precio base supera el límite de 45.000 € establecido en el Plan Auto+.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Caso: Ayuda concedida --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="successMessage" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="text-center mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- CAMBIO: text-indigo-600 a text-[#49795e] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-sm text-[#49795e] font-medium uppercase tracking-wider"&gt;Ayuda Total Estimada&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- CAMBIO: text-indigo-900 a text-[#49795e] --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-4xl font-extrabold text-[#49795e] mt-1" id="totalAmount"&gt;0 €&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Desglose --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="space-y-2 text-sm bg-white p-4 rounded-lg shadow-sm border border-[#f1f9f5]"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-center text-slate-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Base Motor (&lt;span id="motorLabel"&gt;BEV&lt;/span&gt;)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-semibold text-slate-800" id="motorAmount"&gt;+0 €&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-center text-slate-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Bonus Precio Eficiente&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-semibold text-slate-800" id="priceBonusAmount"&gt;+0 €&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="flex justify-between items-center text-slate-600"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span&gt;Origen UE (Vehículo + Batería)&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;!-- CAMBIO: text-emerald-600 se mantiene o se cambia a [#49795e] para consistencia --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-semibold text-[#49795e]" id="originBonusAmount"&gt;+0 €&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-xs text-center text-slate-400 mt-4 italic"&gt;Esta cifra es una estimación. Sujeta a tributación y disponibilidad de fondos.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;!-- Estado Inicial --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;div id="initialMessage" class="text-center text-slate-400 text-sm"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>Introduce los datos para ver la ayuda.</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Inicializar Iconos</p>
+<p class="p1"><span class="Apple-converted-space">        </span>lucide.createIcons();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Constantes del Plan Auto+</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const MAX_AID_BASE = 4500;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function formatCurrency(amount) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(amount);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function calculateAid() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 1. Obtener valores</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const engineType = document.querySelector('input[name="engineType"]:checked').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const priceInput = document.getElementById('price').value;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const price = priceInput ? parseFloat(priceInput) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const madeInEu = document.getElementById('madeInEu').checked;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const batteryEu = document.getElementById('batteryEu').checked;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const resultArea = document.getElementById('resultArea');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const excludedMessage = document.getElementById('excludedMessage');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const successMessage = document.getElementById('successMessage');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const initialMessage = document.getElementById('initialMessage');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Mostrar área de resultados</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resultArea.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>resultArea.classList.add('result-enter');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initialMessage.classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 2. Comprobar Exclusión por Precio (&gt; 45.000)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (price &gt; 45000) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>excludedMessage.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>successMessage.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Si el precio es 0 o vacío, no mostrar error, mostrar 0€ o esperar input</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (price &lt;= 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>// Reset simple</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>document.getElementById('totalAmount').innerText = "0 €";</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>successMessage.classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>excludedMessage.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>excludedMessage.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>successMessage.classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let totalAid = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- PILAR 1: Propulsión ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// BEV = 50% (2250), PHEV = 25% (1125)</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let motorAid = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (engineType === 'bev') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motorAid = MAX_AID_BASE * 0.50;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('motorLabel').innerText = "Eléctrico Puro";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>motorAid = MAX_AID_BASE * 0.25;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.getElementById('motorLabel').innerText = "Híbrido Enchufable";</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- PILAR 2: Precio Eficiente ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// &lt; 35.000 = 25% extra</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// 35.001 - 45.000 = 15% extra</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let priceBonus = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (price &lt;= 35000) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>priceBonus = MAX_AID_BASE * 0.25;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (price &lt;= 45000) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>priceBonus = MAX_AID_BASE * 0.15;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// --- PILAR 3: Origen UE ---</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Coche UE = 15%</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Batería UE = 10%</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let originBonus = 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (madeInEu) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>originBonus += (MAX_AID_BASE * 0.15);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (batteryEu) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>originBonus += (MAX_AID_BASE * 0.10);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Calculo Total</p>
+<p class="p1"><span class="Apple-converted-space">            </span>totalAid = motorAid + priceBonus + originBonus;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Actualizar DOM</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('totalAmount').innerText = formatCurrency(totalAid);</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Actualizar Desglose</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('motorAmount').innerText = `+${formatCurrency(motorAid)}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('priceBonusAmount').innerText = `+${formatCurrency(priceBonus)}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById('originBonusAmount').innerText = `+${formatCurrency(originBonus)}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
