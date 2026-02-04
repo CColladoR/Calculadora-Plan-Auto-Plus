@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Plan Auto+ 2026</title>
+    <!-- Tailwind CSS para estilos rápidos y modernos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconos Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Animaciones suaves para el resultado */
+        .result-enter {
+            animation: slideIn 0.4s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Ajuste para inputs de tipo rango y select en móviles */
+        select, input {
+            font-size: 16px; /* Evita zoom en iOS */
+        }
+    </style>
+</head>
+<body class="p-4 flex items-center justify-center min-h-screen">
+
+    <!-- Contenedor Principal de la Herramienta -->
+    <div class="w-full max-w-lg bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+        
+        <!-- Cabecera -->
+        <!-- CAMBIO: bg-indigo-600 a bg-[#49795e] y text-indigo-100 a text-[#f1f9f5] -->
+        <div class="bg-[#49795e] p-6 text-white">
+            <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="calculator" class="w-6 h-6"></i>
+                <h2 class="text-xl font-bold">Simulador Plan Auto+ 2026</h2>
+            </div>
+            <p class="text-[#f1f9f5] text-sm">Calcula la cuantía estimada de tu ayuda según los nuevos requisitos de sostenibilidad y fabricación europea.</p>
+        </div>
+
+        <!-- Formulario -->
+        <div class="p-6 space-y-6">
+            
+            <!-- 1. Tipo de Motor -->
+            <div>
+                <!-- CAMBIO: text-indigo-500 a text-[#49795e] -->
+                <label class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                    <i data-lucide="zap" class="w-4 h-4 text-[#49795e]"></i>
+                    Tipo de Propulsión
+                </label>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <label class="cursor-pointer relative">
+                        <input type="radio" name="engineType" value="bev" class="peer sr-only" checked onchange="calculateAid()">
+                        <!-- CAMBIO: peer-checked:border-indigo-500 a-[#49795e] y peer-checked:bg-indigo-50 a bg-[#f1f9f5] -->
+                        <div class="p-3 rounded-lg border border-slate-200 bg-slate-50 peer-checked:border-[#49795e] peer-checked:bg-[#f1f9f5] transition-all text-center">
+                            <span class="block font-medium text-slate-800">Eléctrico Puro (BEV)</span>
+                            <span class="text-xs text-slate-500">50% de la base</span>
+                        </div>
+                    </label>
+                    <label class="cursor-pointer relative">
+                        <input type="radio" name="engineType" value="phev" class="peer sr-only" onchange="calculateAid()">
+                        <!-- CAMBIO: peer-checked:border-indigo-500 a-[#49795e] y peer-checked:bg-indigo-50 a bg-[#f1f9f5] -->
+                        <div class="p-3 rounded-lg border border-slate-200 bg-slate-50 peer-checked:border-[#49795e] peer-checked:bg-[#f1f9f5] transition-all text-center">
+                            <span class="block font-medium text-slate-800">Híbrido Enchufable</span>
+                            <span class="text-xs text-slate-500">25% de la base</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 2. Precio del Vehículo -->
+            <div>
+                <!-- CAMBIO: text-indigo-500 a text-[#49795e] -->
+                <label for="price" class="block text-sm font-semibold text-slate-700 mb-2 flex items-center gap-2">
+                    <i data-lucide="tag" class="w-4 h-4 text-[#49795e]"></i>
+                    Precio del Vehículo (Sin IVA)
+                </label>
+                <div class="relative">
+                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">€</span>
+                    <!-- CAMBIO: focus:ring-indigo-500 a ring-[#49795e] -->
+                    <input type="number" id="price" placeholder="Ej: 34000" class="w-full pl-8 pr-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-[#49795e] focus:border-[#49795e] outline-none transition-all" oninput="calculateAid()">
+                </div>
+                <p class="text-xs text-slate-500 mt-1">Límite máximo para ayudas: 45.000 €</p>
+            </div>
+
+            <!-- 3. Origen y Batería -->
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 space-y-4">
+                <p class="text-xs font-bold text-slate-400 uppercase tracking-wide">Bonus Fabricación UE</p>
+                
+                <!-- Coche Fabricado en UE -->
+                <div class="flex items-center justify-between">
+                    <label class="text-sm font-medium text-slate-700 flex items-center gap-2">
+                        <i data-lucide="factory" class="w-4 h-4 text-emerald-600"></i>
+                        ¿Fabricado en la UE?
+                    </label>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="madeInEu" class="sr-only peer" onchange="calculateAid()">
+                        <!-- CAMBIO: focus ring y bg checked al nuevo verde oscuro -->
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#49795e] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#49795e]"></div>
+                    </label>
+                </div>
+
+                <!-- Batería Ensamblada en UE -->
+                <div class="flex items-center justify-between border-t border-slate-200 pt-3">
+                    <label class="text-sm font-medium text-slate-700 flex items-center gap-2">
+                        <i data-lucide="battery-charging" class="w-4 h-4 text-emerald-600"></i>
+                        ¿Batería ensamblada en UE?
+                    </label>
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="batteryEu" class="sr-only peer" onchange="calculateAid()">
+                        <!-- CAMBIO: focus ring y bg checked al nuevo verde oscuro -->
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#49795e] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#49795e]"></div>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Botón Calcular -->
+            <!-- Mantenemos slate-800 para contraste o podemos usar el verde oscuro -->
+            <button onclick="calculateAid()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-bold py-3 rounded-lg transition-colors shadow-lg flex justify-center items-center gap-2">
+                Actualizar Cálculo
+            </button>
+        </div>
+
+        <!-- Área de Resultados -->
+        <!-- CAMBIO: bg-indigo-50 a bg-[#f1f9f5] y border-indigo-100 a un borde suave verde -->
+        <div id="resultArea" class="bg-[#f1f9f5] p-6 border-t border-[#49795e]/20 hidden">
+            <!-- Caso: Excluido por precio -->
+            <div id="excludedMessage" class="hidden text-center text-red-600">
+                <div class="flex justify-center mb-2"><i data-lucide="alert-circle" class="w-8 h-8"></i></div>
+                <h3 class="font-bold text-lg">Vehículo Excluido</h3>
+                <p class="text-sm text-red-500 mt-1">El precio base supera el límite de 45.000 € establecido en el Plan Auto+.</p>
+            </div>
+
+            <!-- Caso: Ayuda concedida -->
+            <div id="successMessage" class="hidden">
+                <div class="text-center mb-4">
+                    <!-- CAMBIO: text-indigo-600 a text-[#49795e] -->
+                    <p class="text-sm text-[#49795e] font-medium uppercase tracking-wider">Ayuda Total Estimada</p>
+                    <!-- CAMBIO: text-indigo-900 a text-[#49795e] -->
+                    <h3 class="text-4xl font-extrabold text-[#49795e] mt-1" id="totalAmount">0 €</h3>
+                </div>
+
+                <!-- Desglose -->
+                <div class="space-y-2 text-sm bg-white p-4 rounded-lg shadow-sm border border-[#f1f9f5]">
+                    <div class="flex justify-between items-center text-slate-600">
+                        <span>Base Motor (<span id="motorLabel">BEV</span>)</span>
+                        <span class="font-semibold text-slate-800" id="motorAmount">+0 €</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-600">
+                        <span>Bonus Precio Eficiente</span>
+                        <span class="font-semibold text-slate-800" id="priceBonusAmount">+0 €</span>
+                    </div>
+                    <div class="flex justify-between items-center text-slate-600">
+                        <span>Origen UE (Vehículo + Batería)</span>
+                        <!-- CAMBIO: text-emerald-600 se mantiene o se cambia a [#49795e] para consistencia -->
+                        <span class="font-semibold text-[#49795e]" id="originBonusAmount">+0 €</span>
+                    </div>
+                </div>
+                <p class="text-xs text-center text-slate-400 mt-4 italic">Esta cifra es una estimación. Sujeta a tributación y disponibilidad de fondos.</p>
+            </div>
+            
+             <!-- Estado Inicial -->
+             <div id="initialMessage" class="text-center text-slate-400 text-sm">
+                Introduce los datos para ver la ayuda.
+             </div>
+        </div>
+    </div>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // Constantes del Plan Auto+
+        const MAX_AID_BASE = 4500;
+        
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(amount);
+        }
+
+        function calculateAid() {
+            // 1. Obtener valores
+            const engineType = document.querySelector('input[name="engineType"]:checked').value;
+            const priceInput = document.getElementById('price').value;
+            const price = priceInput ? parseFloat(priceInput) : 0;
+            const madeInEu = document.getElementById('madeInEu').checked;
+            const batteryEu = document.getElementById('batteryEu').checked;
+
+            const resultArea = document.getElementById('resultArea');
+            const excludedMessage = document.getElementById('excludedMessage');
+            const successMessage = document.getElementById('successMessage');
+            const initialMessage = document.getElementById('initialMessage');
+
+            // Mostrar área de resultados
+            resultArea.classList.remove('hidden');
+            resultArea.classList.add('result-enter');
+            initialMessage.classList.add('hidden');
+
+            // 2. Comprobar Exclusión por Precio (> 45.000)
+            if (price > 45000) {
+                excludedMessage.classList.remove('hidden');
+                successMessage.classList.add('hidden');
+                return;
+            }
+
+            // Si el precio es 0 o vacío, no mostrar error, mostrar 0€ o esperar input
+            if (price <= 0) {
+                 // Reset simple
+                 document.getElementById('totalAmount').innerText = "0 €";
+                 successMessage.classList.remove('hidden');
+                 excludedMessage.classList.add('hidden');
+                 return;
+            }
+
+            excludedMessage.classList.add('hidden');
+            successMessage.classList.remove('hidden');
+
+            let totalAid = 0;
+
+            // --- PILAR 1: Propulsión ---
+            // BEV = 50% (2250), PHEV = 25% (1125)
+            let motorAid = 0;
+            if (engineType === 'bev') {
+                motorAid = MAX_AID_BASE * 0.50;
+                document.getElementById('motorLabel').innerText = "Eléctrico Puro";
+            } else {
+                motorAid = MAX_AID_BASE * 0.25;
+                document.getElementById('motorLabel').innerText = "Híbrido Enchufable";
+            }
+            
+            // --- PILAR 2: Precio Eficiente ---
+            // < 35.000 = 25% extra
+            // 35.001 - 45.000 = 15% extra
+            let priceBonus = 0;
+            if (price <= 35000) {
+                priceBonus = MAX_AID_BASE * 0.25;
+            } else if (price <= 45000) {
+                priceBonus = MAX_AID_BASE * 0.15;
+            }
+
+            // --- PILAR 3: Origen UE ---
+            // Coche UE = 15%
+            // Batería UE = 10%
+            let originBonus = 0;
+            if (madeInEu) {
+                originBonus += (MAX_AID_BASE * 0.15);
+            }
+            if (batteryEu) {
+                originBonus += (MAX_AID_BASE * 0.10);
+            }
+
+            // Calculo Total
+            totalAid = motorAid + priceBonus + originBonus;
+
+            // Actualizar DOM
+            document.getElementById('totalAmount').innerText = formatCurrency(totalAid);
+            
+            // Actualizar Desglose
+            document.getElementById('motorAmount').innerText = `+${formatCurrency(motorAid)}`;
+            document.getElementById('priceBonusAmount').innerText = `+${formatCurrency(priceBonus)}`;
+            document.getElementById('originBonusAmount').innerText = `+${formatCurrency(originBonus)}`;
+        }
+    </script>
+</body>
+</html>
